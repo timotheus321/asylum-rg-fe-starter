@@ -11,6 +11,8 @@ import { useHistory } from 'react-router-dom';
 // import PageNav from '../../common/PageNav';
 
 function RenderLandingPage(props) {
+  // const totalItems = 100;
+  // const isBigScreen = window.innerWidth > 768;
   const scrollToTop = () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -34,20 +36,20 @@ function RenderLandingPage(props) {
       {/* Graphs Section: Add code here for the graphs section for your first ticket */}
       {/* <div className="graphs-section"> */}
       <div className="graphs-section">
-        <div className="graph-item">
+        <div className="grant-rates-by-office-graph-container">
           <img src={GrantRatesByOfficeImg} alt="Grant rates by office" />
           <p>Search Grant Rates By Office</p>
         </div>
-        <div className="graph-item">
+        <div className="grant-rates-by-nationality-container">
           <img
             src={GrantRatesByNationalityImg}
             alt="Grant rates by nationality"
           />
           <p>Search Grant Rates By Nationality</p>
         </div>
-        <div className="graph-item">
+        <div className="grant-rates-over-time-container">
           <img src={GrantRatesOverTimeImg} alt="Grant rates over time" />
-          <p>Search Grant Rates by Time</p>
+          <p>Search Grant Rates Over Time</p>
         </div>
       </div>
       <div className="view-more-data-btn-container">
@@ -58,6 +60,22 @@ function RenderLandingPage(props) {
         >
           View the Data
         </Button>
+        <a
+          href="https://humanrightsfirst.org/wp-content/uploads/2022/10/COW2021001887-I589Data.csv"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button
+            type="default"
+            style={{
+              backgroundColor: '#404C4A',
+              color: '#FFFFFF',
+              marginLeft: '10px',
+            }}
+          >
+            Download the Data
+          </Button>
+        </a>
       </div>
 
       <div className="middle-section">
@@ -76,9 +94,52 @@ function RenderLandingPage(props) {
           </h3>
         </div>
       </div>
-      <div>
-        {/* Bottom Section: Add code here for the graphs section for your first ticket */}
-        {/* <div className="bottom-section">*/}
+
+      {/* Bottom Section: Add code here for the graphs section for your first ticket */}
+      {/* <div className="bottom-section">*/}
+      <div className="bottom-section">
+        <h1>Systemic Disparity Insights</h1>
+        <div className="data-container">
+          <div className="first-data-point-container">
+            <h2>36%</h2>
+            <h3>
+              By the end of the Trump administration, the average asylum office
+              grant rate had fallen 36 percent from an average of 44 percent in
+              fiscal year 2016 to 28 percent in fiscal year 2020.
+            </h3>
+          </div>
+          <div className="second-data-point-container">
+            <h2>5%</h2>
+            <h3>
+              The New York Asylum office grant rate dropped to 5 percent in
+              fiscal year 2020
+            </h3>
+          </div>
+          <div className="third-data-point-container">
+            <h2>6x Lower</h2>
+            <h3>
+              Between fiscal year 2017 and 2020, the New York asylum office's
+              average grant rate was six times lower than the San Francisco
+              asylum office.
+            </h3>
+          </div>
+        </div>
+        <a
+          href="https://humanrightsfirst.org/library/uscis-records-reveal-systemic-disparities-in-asylum-decisions/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div className="read-more-btn">
+            <button
+              type="button"
+              class="ant-btn ant-btn-default"
+              style={{ backgroundColor: '#404C4A', color: '#FFFFFF' }}
+            >
+              <span>Read More</span>
+            </button>
+          </div>
+        </a>
+        {/* <PageNav bigScreen={isBigScreen} totalItems={totalItems} /> */}
         <p onClick={() => scrollToTop()} className="back-to-top">
           Back To Top ^
         </p>
