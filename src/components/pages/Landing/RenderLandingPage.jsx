@@ -132,7 +132,7 @@ function RenderLandingPage(props) {
           <div className="read-more-btn">
             <button
               type="button"
-              class="ant-btn ant-btn-default"
+              className="ant-btn ant-btn-default"
               style={{ backgroundColor: '#404C4A', color: '#FFFFFF' }}
             >
               <span>Read More</span>

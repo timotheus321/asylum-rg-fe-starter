@@ -44,30 +44,60 @@
 .graphs-section {
 display: flex;
 justify-content: space-evenly;
+align-content: space-between;
+
+// gap: 60px;
 }
 
 .grant-rates-by-office-graph-container {
-   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    height: 165px;
     font-size: 1.5rem;
     font-family: "acumin";
-
+    height: auto; 
+     border: red 1px solid;
 }
 .grant-rates-by-nationality-container {
    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    height: 165px;
     font-size: 1.5rem;
     font-family: "acumin";
+    height: auto; 
+    border: red 1px solid;
 }
+// .grant-rates-by-nationality-container p {
+//     margin-top: 20px; /* Adjust this value as needed to lower the text */
+// }
 .grant-rates-over-time-container {
    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    height: 165px;
     font-size: 1.5rem;
     font-family: "acumin";
+    height: auto;
+    border: red 1px solid;
 }
+.grant-rates-by-office-graph-container img {
+    // width: 60%; /* Adjust this value to resize images */
+    height: 60%; /* Maintain aspect ratio */
+}
+
+.grant-rates-by-nationality-container img {
+//   width: 60%; /* Adjust this value to resize images */
+height: 60%;
+}
+.grant-rates-over-time-container img {
+    // width: 60%; /* Adjust this value to resize images */
+    height: 60%;
+}
+
 
 .view-more-data-btn-container {
     
@@ -108,32 +138,52 @@ justify-content: space-evenly;
     text-align: center;
     margin-top: 10%;
 }
+.bottom-section h1 { /* Assuming this is your heading tag for 'Systemic Disparity Insights' */
+    font-size: 2.4rem; /* Adjust this value as needed */
+}
 .data-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    flex-wrap: nowrap; 
-    margin-bottom: 5%;
-    min-width: 100;
+    flex-wrap: wrap; 
+    // margin-bottom: 5%;
+    // min-width: 100;
 }
 .first-data-point-container {
-    flex: 1 1 0%; 
-    text-align: center;
-    margin: 10px; 
-    max-width: 33%;
+    // flex: 1 1 0%; 
+    // text-align: center;
+    // margin: 10px; 
+    height: 200px;
+    width: 433px;
+    font-size: 1.8 rem;
+   
+    
 }
 .second-data-point-container {
-    flex: 1 1 0%;
-    text-align: center;
-    margin: 10px; 
-    max-width: 33%;
+    // flex: 1 1 0%;
+    // text-align: center;
+    // margin: 10px; 
+    height: 200px;
+    width: 433px;
+    font-size: 1.8 rem;
+    
 }
 .third-data-point-container {
-    flex: 1 1 0%; 
-    text-align: center;
-    margin: 10px; 
-    max-width: 33%;
+    // flex: 1 1 0%; 
+    // text-align: center;
+    // margin: 10px; 
+    font-size: 1.8 rem;
+    height: 200px;
+      width: 433px;
+    
+}
+.first-data-point-container h2 {
+    font-size: 1.9rem; 
+} .second-data-point-container h2 {
+    font-size: 1.9rem; 
+} .third-data-point-container h2 {
+    font-size: 1.9rem; 
 }
 
 .back-to-top {
