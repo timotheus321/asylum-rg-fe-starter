@@ -6,7 +6,7 @@ import {
   // useHistory,
   Switch,
 } from 'react-router-dom';
-
+import { Auth0Provider } from '@auth0/auth0-react';
 import 'antd/dist/antd.less';
 import { NotFoundPage } from './components/pages/NotFound';
 import { LandingPage } from './components/pages/Landing';
@@ -15,7 +15,8 @@ import { FooterContent, SubFooter } from './components/Layout/Footer';
 import { HeaderContent } from './components/Layout/Header';
 
 // import { TablePage } from './components/pages/Table';
-
+import Profile from './components/Profile';
+import AuthenticationButton from './components/AuthenticationButton';
 import { Layout } from 'antd';
 import GraphsContainer from './components/pages/DataVisualizations/GraphsContainer';
 import { Provider } from 'react-redux';
@@ -27,14 +28,28 @@ const { primary_accent_color } = colors;
 
 const store = configureStore({ reducer: reducer });
 ReactDOM.render(
-  <Router>
+  <Auth0Provider
+    domain="dev-x7gdm8jacll13dzt.us.auth0.com"
+    clientId="b3lBTChc0Pexjgum8CnougYiqJcYFJ0g"
+    redirectUri={window.location.origin}
+  >
     <Provider store={store}>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+      <Router>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </Router>
     </Provider>
-  </Router>,
+  </Auth0Provider>,
   document.getElementById('root')
+  // <Router>
+  //   <Provider store={store}>
+  //     <React.StrictMode>
+  //       <App />
+  //     </React.StrictMode>
+  //   </Provider>
+  // </Router>,
+  // document.getElementById('root')
 );
 
 export function App() {
@@ -50,10 +65,12 @@ export function App() {
         }}
       >
         <HeaderContent />
+        <AuthenticationButton />
       </Header>
       <Switch>
         <Route path="/" exact component={LandingPage} />
         <Route path="/graphs" component={GraphsContainer} />
+        <Route path="/profile" component={Profile} />
         <Route component={NotFoundPage} />
       </Switch>
       <Footer

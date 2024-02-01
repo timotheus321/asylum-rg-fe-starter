@@ -36,3 +36,7 @@ Submit the following in your course:
 
 - Link to your forked repo with the code for the new profile page and auth integration
 - Link to a Loom video answering the prompt in the `Submit Your Deliverables` assignment in your course
+Domain:
+dev-x7gdm8jacll13dzt.us.auth0.com
+Client ID
+b3lBTChc0Pexjgum8CnougYiqJcYFJ0g
