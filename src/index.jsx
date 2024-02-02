@@ -16,7 +16,7 @@ import { HeaderContent } from './components/Layout/Header';
 
 // import { TablePage } from './components/pages/Table';
 import Profile from './components/Profile';
-import AuthenticationButton from './components/AuthenticationButton';
+
 import AuthenticatedRouteChecker from './components/AuthenticatedRouteChecker';
 
 import { Layout } from 'antd';
@@ -69,7 +69,6 @@ export function App() {
         }}
       >
         <HeaderContent />
-        <AuthenticationButton />
       </Header>
       <AuthenticatedRouteChecker />
       <Switch>

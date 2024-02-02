@@ -4,12 +4,9 @@ import { useAuth0 } from '@auth0/auth0-react';
 const AuthenticationButton = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
-  // Log the authentication status to see if the user is authenticated
-  console.log('Is Authenticated?', isAuthenticated);
-
   const buttonStyle = {
     backgroundColor: '#404C4A', // Main color
-    color: '#FFFFFF', // Text color
+    color: '#E2F0F7', // Text color
     border: 'none',
   };
 
