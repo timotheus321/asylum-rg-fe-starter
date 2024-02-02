@@ -17,6 +17,8 @@ import { HeaderContent } from './components/Layout/Header';
 // import { TablePage } from './components/pages/Table';
 import Profile from './components/Profile';
 import AuthenticationButton from './components/AuthenticationButton';
+import AuthenticatedRouteChecker from './components/AuthenticatedRouteChecker';
+
 import { Layout } from 'antd';
 import GraphsContainer from './components/pages/DataVisualizations/GraphsContainer';
 import { Provider } from 'react-redux';
@@ -31,7 +33,9 @@ ReactDOM.render(
   <Auth0Provider
     domain="dev-x7gdm8jacll13dzt.us.auth0.com"
     clientId="b3lBTChc0Pexjgum8CnougYiqJcYFJ0g"
-    redirectUri={window.location.origin}
+    authorizationParams={{
+      redirect_uri: window.location.origin,
+    }}
   >
     <Provider store={store}>
       <Router>
@@ -67,6 +71,7 @@ export function App() {
         <HeaderContent />
         <AuthenticationButton />
       </Header>
+      <AuthenticatedRouteChecker />
       <Switch>
         <Route path="/" exact component={LandingPage} />
         <Route path="/graphs" component={GraphsContainer} />
